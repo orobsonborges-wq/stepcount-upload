@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <meta name="description" content="StepCount: conte degraus em vídeos de teste de degrau." />
+    <title>StepCount — Contador de degraus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="StepCount início" data-action="reset">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>step<span class="brand-accent">count</span></span>
+        </a>
+        <div class="topbar-actions">
+          <button class="icon-button" data-action="open-help" aria-label="Ajuda">
+            <span class="help-icon">?</span>
+          </button>
+          <button class="avatar" data-action="open-profile" aria-label="Abrir perfil">LC</button>
+        </div>
+      </header>
+
+      <main id="app-main" class="main-content">
+        <section id="screen-upload" class="screen screen-active" aria-labelledby="upload-title">
+          <div class="eyebrow"><span class="status-dot"></span> análise por vídeo</div>
+          <div class="hero-copy">
+            <h1 id="upload-title">Conte cada passo.<br /><em>Sem perder o ritmo.</em></h1>
+            <p>Envie a gravação do teste de degrau e receba uma contagem automática, com os eventos marcados para sua revisão.</p>
+          </div>
+
+          <div class="upload-grid">
+            <label class="upload-card" for="video-input" id="drop-zone" tabindex="0">
+              <input id="video-input" type="file" accept="video/*" />
+              <span class="upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" /></svg></span>
+              <span class="upload-card-title">Solte o vídeo aqui</span>
+              <span class="upload-card-subtitle">ou toque para escolher um arquivo</span>
+              <span class="upload-meta">MP4, MOV ou WEBM <span>·</span> até 200 MB</span>
+              <span class="upload-or">ou</span>
+              <span class="camera-button"><svg viewBox="0 0 24 24"><path d="M4 7.5h3l1.4-2h7.2l1.4 2H20a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" /><circle cx="12" cy="13" r="3.2" /></svg> Gravar agora</span><button type="button" class="demo-link" data-action="demo-config">Conheça com um vídeo de exemplo <svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5 5 5-5 5" /></svg></button>
+            </label>
+
+            <div class="reference-card">
+              <div class="reference-top"><span class="reference-label">vídeo de referência</span><span class="reference-chip">Shorts</span></div>
+              <div class="reference-visual">
+                <div class="reference-sun"></div>
+                <div class="reference-wall"></div>
+                <div class="reference-step step-back"></div>
+                <div class="reference-step step-front"></div>
+                <div class="reference-person"><div class="person-head"></div><div class="person-body"></div><div class="person-leg leg-left"></div><div class="person-leg leg-right"></div></div>
+                <div class="play-orb"><svg viewBox="0 0 24 24"><path d="m9 6 8 6-8 6V6Z" /></svg></div>
+                <div class="reference-caption"><span class="caption-dot"></span> Queen's college step test</div>
+              </div>
+              <a class="reference-link" href="https://www.youtube.com/shorts/2MnYpzTyVoA" target="_blank" rel="noreferrer">Abrir vídeo de referência <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+            </div>
+          </div>
+
+          <div class="privacy-note"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 2.9 8.5 7 10 4.1-1.5 7-5.5 7-10V6l-7-3Z" /><path d="m9.5 12 1.7 1.7 3.5-3.5" /></svg><span>Seu vídeo é analisado com privacidade e apagado automaticamente após o processamento.</span></div>
+
+          <div class="how-it-works">
+            <div class="section-heading"><div><span class="section-kicker">fluxo simples</span><h2>Como funciona</h2></div><span class="section-count">03 etapas</span></div>
+            <div class="steps-row">
+              <div class="mini-step"><span class="step-number">01</span><strong>Envie</strong><span>seu vídeo</span></div>
+              <div class="step-connector"></div>
+              <div class="mini-step"><span class="step-number">02</span><strong>Marque</strong><span>o degrau</span></div>
+              <div class="step-connector"></div>
+              <div class="mini-step"><span class="step-number">03</span><strong>Revise</strong><span>a contagem</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screen-config" class="screen" aria-labelledby="config-title">
+          <div class="screen-header"><button class="back-button" data-action="back"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg><span>Voltar</span></button><span class="progress-label">01 <span>/</span> 02</span></div>
+          <div class="eyebrow"><span class="status-dot"></span> configurar análise</div>
+          <div class="hero-copy compact"><h1 id="config-title">Onde está<br /><em>o degrau?</em></h1><p>Arraste a linha até a borda superior da plataforma. Isso ajuda a contagem a ficar mais precisa.</p></div>
+
+          <div class="video-config-card">
+            <div class="video-toolbar"><span class="file-name" id="config-file-name">vídeo_selecionado.mp4</span><span class="video-duration" id="config-duration">00:00</span></div>
+            <div class="video-stage" id="video-stage">
+              <video id="video-preview" playsinline muted></video>
+              <div id="mock-scene" class="mock-scene"><div class="mock-light"></div><div class="mock-wall"></div><div class="mock-floor"></div><div class="mock-step mock-step-back"></div><div class="mock-step mock-step-front"></div><div class="mock-person"><span class="mock-head"></span><span class="mock-torso"></span><span class="mock-arm"></span><span class="mock-leg one"></span><span class="mock-leg two"></span></div></div>
+              <div class="analysis-overlay"><span class="pose-point point-head"></span><span class="pose-point point-shoulder"></span><span class="pose-point point-hip"></span><span class="pose-point point-knee"></span><span class="pose-point point-ankle"></span></div>
+              <div class="step-line" id="step-line" style="top: 63%"><span class="line-tag">borda do degrau</span><span class="line-handle" aria-label="Arraste para posicionar"><span></span></span></div>
+              <div class="video-hint">Arraste para ajustar</div>
+              <button class="stage-play" id="stage-play" data-action="toggle-video" aria-label="Reproduzir vídeo"><svg class="play-svg" viewBox="0 0 24 24"><path d="m9 6 8 6-8 6V6Z" /></svg><svg class="pause-svg" viewBox="0 0 24 24"><path d="M8 6v12M16 6v12" /></svg></button>
+            </div>
+            <div class="video-scrubber"><span class="scrubber-track"><span class="scrubber-fill"></span><span class="scrubber-thumb"></span></span><span id="scrubber-time">00:00 / 00:00</span></div>
+          </div>
+
+          <div class="config-options"><div class="option-row"><div><strong>Tipo de teste</strong><span>Subida e retorno completos</span></div><button class="select-pill" data-action="toggle-protocol">Padrão <svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5" /></svg></button></div><div class="option-row"><div><strong>Detecção de pose</strong><span>Corpo inteiro visível</span></div><span class="ready-pill"><span></span> pronto</span></div></div>
+          <button class="primary-button full" data-action="start-analysis"><span>Iniciar análise</span><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5 5 5-5 5" /></svg></button>
+          <p class="microcopy"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 2.9 8.5 7 10 4.1-1.5 7-5.5 7-10V6l-7-3Z" /></svg> A análise leva cerca de 1–2 minutos.</p>
+        </section>
+
+        <section id="screen-processing" class="screen" aria-labelledby="processing-title">
+          <div class="processing-wrap"><div class="processing-mark"><span></span><span></span><span></span></div><div class="eyebrow"><span class="status-dot pulse"></span> análise em andamento</div><h1 id="processing-title">Lendo o seu<br /><em>movimento...</em></h1><p>Estamos acompanhando seus pontos de pose e validando cada subida.</p><div class="processing-card"><div class="processing-preview"><div class="processing-bars"><span></span><span></span><span></span><span></span><span></span></div><div class="processing-scene"><div class="proc-step"></div><div class="proc-person"><i></i><b></b><em></em></div><div class="scan-line"></div></div><span class="frame-label">FRAME <b id="frame-number">0048</b></span></div><div class="processing-status"><div class="status-line"><span>Detectando movimentos</span><strong id="progress-percent">0%</strong></div><div class="progress-bar"><span id="progress-fill"></span></div><div class="status-details"><span><i class="tiny-dot"></i><span id="progress-label">Preparando vídeo...</span></span><span id="processing-time">~ 45s restantes</span></div></div></div><div class="processing-tips"><span class="tip-icon">i</span><span>Estamos ignorando pausas e movimentos incompletos para manter a contagem limpa.</span></div></div>
+        </section>
+
+        <section id="screen-result" class="screen" aria-labelledby="result-title">
+          <div class="screen-header result-head"><button class="back-button" data-action="reset"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg><span>Novo vídeo</span></button><span class="result-date">hoje, 14:32</span></div>
+          <div class="result-intro"><div class="eyebrow"><span class="status-dot"></span> análise concluída</div><h1 id="result-title">Seu resultado<br /><em>está pronto.</em></h1><p>Revise os eventos detectados antes de salvar a contagem final.</p></div>
+          <div class="result-score"><div class="score-label">degraus contados</div><div class="score-number" id="score-number">32</div><div class="score-caption"><span class="confidence-dot"></span><strong>94% de confiança</strong><span>·</span><span>32 eventos válidos</span></div><div class="score-rule"><span></span></div></div>
+          <div class="metrics-grid"><div class="metric-card"><span class="metric-icon blue"><svg viewBox="0 0 24 24"><path d="M12 6v6l4 2" /><circle cx="12" cy="12" r="8" /></svg></span><span class="metric-label">duração</span><strong>01:42</strong></div><div class="metric-card"><span class="metric-icon coral"><svg viewBox="0 0 24 24"><path d="M5 17 9 13l3 3 6-8" /><path d="M15 8h3v3" /></svg></span><span class="metric-label">cadência média</span><strong>18,8 <small>min⁻¹</small></strong></div><div class="metric-card wide"><span class="metric-icon green"><svg viewBox="0 0 24 24"><path d="M6 18V9m6 9V5m6 13v-7" /></svg></span><span class="metric-label">ritmo</span><strong>constante</strong><span class="metric-trend">+2,4% na segunda metade</span></div></div>
+          <div class="events-card"><div class="events-heading"><div><span class="section-kicker">revisão rápida</span><h2>Eventos detectados</h2></div><button class="text-button" data-action="toggle-events">ver todos <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg></button></div><div class="event-timeline"><span class="timeline-base"></span><span class="event-marker m1"></span><span class="event-marker m2"></span><span class="event-marker m3"></span><span class="event-marker m4"></span><span class="event-marker m5"></span><span class="event-marker m6"></span><span class="event-marker m7"></span><span class="event-marker m8"></span></div><div class="timeline-labels"><span>00:00</span><span>00:51</span><span>01:42</span></div><div class="event-summary"><span><i></i> subidas válidas</span><strong>32</strong></div></div>
+          <div class="result-actions"><button class="secondary-button" data-action="export"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" /></svg> Exportar relatório</button><button class="primary-button" data-action="save-result"><span>Salvar resultado</span><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5 5 5-5 5" /></svg></button></div><p class="result-disclaimer"><svg viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M10.3 4.8 3.2 17a2 2 0 0 0 1.7 3h14.2a2 2 0 0 0 1.7-3L13.7 4.8a2 2 0 0 0-3.4 0Z" /></svg> Esta é uma estimativa automática. Confirme os eventos antes de usar o resultado em avaliações formais.</p>
+        </section>
+      </main>
+
+      <footer class="app-footer"><span><span class="footer-mark"></span> feito para movimentos reais</span><span>v0.1 · protótipo</span></footer>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"><span class="toast-icon">✓</span><span id="toast-text">Pronto</span></div>
+    <div id="help-modal" class="modal-backdrop" aria-hidden="true"><div class="modal"><button class="modal-close" data-action="close-help" aria-label="Fechar">×</button><span class="section-kicker">sobre o stepcount</span><h2>Uma contagem que você consegue revisar.</h2><p>O protótipo simula a jornada completa: upload, ajuste do degrau, leitura dos movimentos e revisão dos eventos detectados.</p><div class="modal-note"><span>i</span><p>Na versão de produção, o vídeo seria processado por um modelo de pose no servidor e apagado após a análise.</p></div></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>
